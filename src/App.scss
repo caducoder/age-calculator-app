@@ -1,0 +1,119 @@
+.main-box {
+  padding: 40px 20px;
+  margin: 100px auto;
+  border-radius: 20px 20px 120px 20px;
+  background-color: #fff;
+  max-width: 450px;
+
+  .form-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+
+    label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgb(113, 111, 111);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 15px 10px;
+      max-width: 70px;
+      font-family: Poppins;
+      font-weight: bold;
+      font-size: 1.5em;
+      border: 1px solid rgb(219, 219, 219);
+      border-radius: 10px;
+
+      &:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        border-color: rgb(133, 77, 255);
+        caret-color: rgb(133, 77, 255);
+      }
+    }
+  }
+
+  .separator {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+
+    span {
+      position: absolute;
+      border: 1px solid rgb(219, 219, 219);
+      width: 100%;
+      top: 50%;
+    }
+
+    .submit-button {
+      padding: 20px;
+      border: none;
+      border-radius: 50%;
+      background-color: rgb(133, 77, 255);
+      cursor: pointer;
+      z-index: 1;
+
+      img {
+        width: 30px;
+      }
+
+      &:hover {
+        background-color: rgb(142, 93, 250);
+      }
+
+      &:active {
+        background-color: rgb(17, 17, 17);
+      }
+    }
+
+  }
+
+  .result-section {
+    p {
+      font-size: 3em;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 5px;
+
+      span {
+        color: rgb(133, 77, 255);
+      }
+    }
+  }
+
+}
+
+/* Chrome */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+
+@media only screen and (min-width: 480px) {
+  .main-box {
+    .form-inputs {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-box {
+    .separator {
+      justify-content: end;
+    }
+  }
+
+}
