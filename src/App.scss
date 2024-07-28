@@ -1,16 +1,18 @@
 .main-box {
   padding: 40px 20px;
-  margin: 100px auto;
+  margin: 100px 20px;
   border-radius: 20px 20px 120px 20px;
   background-color: #fff;
-  max-width: 450px;
+  max-width: 550px;
 
-  .form-inputs {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+  .form {
+    & > div {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
 
-    label {
+    .label {
       text-transform: uppercase;
       letter-spacing: 3px;
       color: rgb(113, 111, 111);
@@ -19,9 +21,21 @@
       margin-bottom: 5px;
     }
 
-    input {
+    &.submitted {
+      input {
+        &:invalid {
+          border-color: #f00;
+
+          &:focus {
+            outline-color: #f00;
+          }
+        }
+      }
+    }
+
+    .input {
       padding: 15px 10px;
-      max-width: 70px;
+      max-width: 90px;
       font-family: Poppins;
       font-weight: bold;
       font-size: 1.5em;
@@ -35,6 +49,12 @@
         caret-color: rgb(133, 77, 255);
       }
     }
+
+    .validationMessage {
+      color: #f00;
+      font-style: italic;
+      font-size: 0.8em;
+    }
   }
 
   .separator {
@@ -44,7 +64,7 @@
     margin: 20px 0;
     width: 100%;
 
-    span {
+    .line-through {
       position: absolute;
       border: 1px solid rgb(219, 219, 219);
       width: 100%;
@@ -71,22 +91,19 @@
         background-color: rgb(17, 17, 17);
       }
     }
-
   }
 
   .result-section {
     p {
-      font-size: 3em;
+      font-size: 3.2em;
       font-weight: 900;
       font-style: italic;
-      line-height: 5px;
 
       span {
         color: rgb(133, 77, 255);
       }
     }
   }
-
 }
 
 /* Chrome */
@@ -103,8 +120,16 @@ input[type="number"] {
 
 @media only screen and (min-width: 480px) {
   .main-box {
-    .form-inputs {
-      justify-content: flex-start;
+    margin: 100px auto;
+    .form {
+      & > div {
+        justify-content: flex-start;
+        gap: 20px;
+      }
+
+      .input {
+        max-width: 130px;
+      }
     }
   }
 }
@@ -115,5 +140,4 @@ input[type="number"] {
       justify-content: end;
     }
   }
-
 }
